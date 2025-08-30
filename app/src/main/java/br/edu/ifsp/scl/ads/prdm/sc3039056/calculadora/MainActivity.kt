@@ -7,7 +7,6 @@ import android.widget.EditText
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var etDisplay: EditText
     private var operacao: Char? = null
     private var numeroAnterior: Double = 0.0
@@ -51,13 +50,11 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnEquals).setOnClickListener { calcularResultado() }
         findViewById<Button>(R.id.btnClear).setOnClickListener { limpar() }
     }
-
     private fun definirOperacao(op: Char) {
         numeroAnterior = etDisplay.text.toString().toDoubleOrNull() ?: 0.0
         operacao = op
         novoNumero = true
     }
-
     private fun calcularResultado() {
         val numeroAtual = etDisplay.text.toString().toDoubleOrNull() ?: return
         var resultado = 0.0
